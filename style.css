@@ -261,3 +261,69 @@ nav ul li a {
     font-style: normal;
   }
   
+  .menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: rgb(242, 255, 0);
+  cursor: pointer;
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+    .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #c30101;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    }
+  
+  .nav-links.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+  
+    .nav-links {
+    display: flex;
+    flex-direction: column;
+    background-color: #c30101;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+    }
+
+    .nav-links.active {
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+    }
+
+
+
+
+}
