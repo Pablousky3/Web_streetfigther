@@ -107,7 +107,7 @@ nav ul li a {
     align-items: center;
     overflow: hidden;
     width: 100%;
-    height: auto; /* Ajusta la altura según tus necesidades */
+    height: auto; 
     position: relative;
 }
 
@@ -115,7 +115,7 @@ nav ul li a {
     font-family: 'Street', sans-serif;
     display: flex;
     transition: transform 0.5s ease;
-    transform: translateX(-100%); /* Empieza con la segunda imagen centrada */
+    transform: translateX(-100%); 
 }
 
 .carousel-item {
@@ -133,7 +133,7 @@ nav ul li a {
 
 .carousel-item h1 {
     margin-top: 10px;
-    color: #fff; /* Ajusta el color del texto según tus necesidades */
+    color: #fff; 
 }
 
 .carousel-button {
@@ -181,7 +181,7 @@ nav ul li a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px; /* Espacio entre el logo y el botón */
+  gap: 40px; 
 }
 
 
@@ -280,7 +280,7 @@ nav ul li a {
   }
   
   .seccion-animada {
-    opacity: 0; /* Inicialmente oculta */
+    opacity: 0; 
     transition: opacity 2s ease-out, transform 1s ease-out;
   }
   
@@ -296,7 +296,7 @@ nav ul li a {
     font-style: normal;
   }
   
-/* Ajustes para que sea completamente */
+/* Ajustes para que sea completamente responsive */
 * {
   box-sizing: border-box;
 }
@@ -517,7 +517,7 @@ img {
 #player1-img,
 #player2-img {
   width: 100%;
-  max-height: 300px; /* Puedes ajustar este valor */
+  max-height: 300px; 
   object-fit: contain;
 }
 
@@ -559,7 +559,7 @@ img {
 
 .character-selector-page #boton-x1,
 .character-selector-page #boton-x2 {
-  display: none; /* Ocultos por defecto */
+  display: none; 
   font-size: 16px;
   font-family: 'Street', sans-serif;
   font-weight: bold;
@@ -631,7 +631,7 @@ img {
 
 /* --- SECCION MAPAS --- */
 .mapas {
-  background: #000000cc; /* negro con transparencia para brillo */
+  background: #000000cc; 
   padding: 2rem 1rem;
   border-radius: 12px;
 }

@@ -57,12 +57,12 @@ $(document).ready(function() {
     });
 
         $('.nav-links a').on('click', function (e) {
-    e.preventDefault(); // Evita el salto inmediato
+    e.preventDefault(); 
     const target = $(this).attr('href');
 
     $('html, body').animate({
-        scrollTop: $(target).offset().top - 60 // Ajusta si hay header fijo
-    }, 600); // Duración en milisegundos
+        scrollTop: $(target).offset().top - 60 
+    }, 600); 
 
     $('.nav-links').removeClass('active'); // Cierra el menú
 
