@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Selection MOO ICT</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="character-selector-page">
+    <div id="container">
+        <div id="player1">
+            <h2>Player 1</h2>
+            <div id="player1-img-container">
+                <img id="player1-img" src="" alt="">
+            </div>
+            <div id="player1-info"></div>
+                <div id="boton-x1" style="display: none;">
+                    <button onclick="deselectCharacter('player1')">X</button>
+                </div>
+                    
+
+        </div>
+        <div id="character-selection">
+            <h1>CHARACTER SELECT</h1>
+            <div id="character-grid">
+                <div class="character-option" id="james" onclick="selectCharacter('james')"><img src="images\Personajes\7.png" alt="Blanka"></div>
+                <div class="character-option" id="emily" onclick="selectCharacter('emily')"><img src="images\Personajes\8.png" alt="Blanka"></div>
+                <div class="character-option" id="william" onclick="selectCharacter('william')"><img src="images\Personajes\5.png" alt="Blanka"></div>
+                <div class="character-option" id="olivia" onclick="selectCharacter('olivia')"><img src="images\Personajes\6.png" alt="Blanka"></div>
+                <div class="character-option" id="michael" onclick="selectCharacter('michael')"><img src="images\Personajes\3.png" alt="Blanka"></div>
+                <div class="character-option" id="charlotte" onclick="selectCharacter('charlotte')"><img src="images\Personajes\4.png" alt="Blanka"></div>
+                <div class="character-option" id="benjamin" onclick="selectCharacter('benjamin')"><img src="images\Personajes\1.png" alt="Blanka"></div>
+                <div class="character-option" id="sophia" onclick="selectCharacter('sophia')"><img src="images\Personajes\2.png" alt="Blanka"></div>
+            </div>
+        </div>
+            <div id="player2">
+                <h2>Player 2</h2>
+                <div id="player2-img-container">
+                    <img id="player2-img" src="" alt="">
+                </div>
+                <div id="player2-info"></div>
+                    <div id="boton-x2" style="display: none;">
+                        <button onclick="deselectCharacter('player2')">X</button>
+                    </div>
+                </div>
+                
+            </div>
+    
+        </div>
+        
+    </div>
+       <div id="inf">
+        <a href="MapSelector.html" class="try-now-link">
+            <button id="ready-button" disabled>READY</button>
+
+        </a>
+    </div>
+   
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
