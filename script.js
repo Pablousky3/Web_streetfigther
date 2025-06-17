@@ -65,12 +65,27 @@ $(document).ready(function() {
     }, 600); // Duración en milisegundos
 
     $('.nav-links').removeClass('active'); // Cierra el menú
+
+    });
+
+    $(document).ready(function() {
+    
+    $('.try-now').on('click', function (e) {
+        e.preventDefault();
+        $('#cortinilla').addClass('active');
+        setTimeout(function () {
+        window.location.href = "CharacterSelector.html";
+        }, 1500);
+    });
+
+    
+    
 });
 
 
-
-
 });
+
+
 
 document.addEventListener('scroll', function() {
     const secciones = document.querySelectorAll('.seccion-animada');
@@ -196,3 +211,37 @@ function deselectCharacter(player) {
 
   document.getElementById('ready-button').disabled = true;
 }
+
+// Interacción con pines
+  $(".pin").mouseenter(function () {
+    let planet = $(this).data("planet");
+    $(".Pin" + planet + ".fa-solid.fa-location-pin.fa-beat-fade").css("animation-iteration-count", "infinite");
+    $(".Foto" + planet + " img").css("opacity", "100%");
+    $(".Texto" + planet).css("opacity", "100%");
+    $(".caja-foto" + planet).css("opacity", "100");
+  });
+
+  $(".pin").mouseleave(function () {
+    let planet = $(this).data("planet");
+    $(".Pin" + planet + ".fa-solid.fa-location-pin.fa-beat-fade").css("animation-iteration-count", "0");
+    $(".Foto" + planet + " img").css("opacity", "0%");
+    $(".Texto" + planet).css("opacity", "0%");
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const pins = document.querySelectorAll('.pin');
+
+  pins.forEach(pin => {
+    const region = pin.classList[1]; // e.g., "SouthAmerica"
+    const infoBox = document.querySelector(`.cajafoto${region}`);
+
+    if (infoBox) {
+      pin.addEventListener('mouseenter', () => {
+        infoBox.style.opacity = '0.95';
+      });
+      pin.addEventListener('mouseleave', () => {
+        infoBox.style.opacity = '0';
+      });
+    }
+  });
+});

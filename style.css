@@ -101,9 +101,6 @@ nav ul li a {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-
-
-
 .carousel-container {
     display: flex;
     justify-content: center;
@@ -165,8 +162,10 @@ nav ul li a {
 
 /* Demo------------------------------------------------------------------------------------------------------------------ */
 
+
 #demo {
   background: url('Fondo3.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
   padding: 80px 20px;
   min-height: 80vh;
   position: relative;
@@ -175,6 +174,8 @@ nav ul li a {
   flex-direction: column;
   justify-content: center;
 }
+
+
 
 #demo .seccion-animada {
   display: flex;
@@ -211,11 +212,14 @@ nav ul li a {
 /* info ---------------------------------------------------------------------------------------------------------------------------- */
 
 #info {
-    padding: 50px 20px;
-    background-color: #464646;
-    color: aliceblue;
-    text-align: center;
+  padding: 50px 20px;
+  background: url('images/FondoFormulario.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  color: rgb(198, 1, 1);
+  text-align: center;
+   font-family: 'Street', sans-serif;
 }
+
 
 #info-form {
     display: flex;
@@ -397,8 +401,64 @@ img {
 
 
 }
+
+
+#cortinilla {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: top 1s ease-in-out;
+}
+
+#cortinilla img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#cortinilla.active {
+  top: 0;
+}
+
+#cortinilla.hide {
+  top: -100%;
+}
+
+
+
+
+
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* Selector de personaje */
+
+#back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #c30101;
+  color: yellow;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+#back-button a {
+  color: yellow;
+  text-decoration: none;
+}
+
+#back-button:hover {
+  background-color: #570000;
+}
+
 
 .character-selector-page {
   background: url('Fondo2.jpg') no-repeat center center/cover;
@@ -564,4 +624,133 @@ img {
   .character-selector-page #character-selection {
     max-width: 90%;
   }
+}
+
+
+/* Selector mapas -------------------------------------------------------------------------------------------------- */
+
+/* --- SECCION MAPAS --- */
+.mapas {
+  background: #000000cc; /* negro con transparencia para brillo */
+  padding: 2rem 1rem;
+  border-radius: 12px;
+}
+
+.h1mapa {
+  font-family: 'Bungee', cursive, sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #fff244;
+  margin-bottom: 1rem;
+}
+
+.caja-mapa {
+  position: relative;
+  height: 90vh;
+}
+
+.big-map {
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  filter: brightness(0.9);
+  background: linear-gradient(135deg, #2e003e, #000000);
+}
+
+.big-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- PINES DE LOCALIZACION --- */
+.pin {
+  font-size: 2.5em;
+  color: #00ffcc;
+  cursor: pointer;
+  position: absolute;
+  transition: transform 0.3s ease, color 0.3s ease;
+  z-index: 200;
+}
+
+.pin:hover {
+  color: #ff44cc;
+  transform: scale(1.3);
+}
+
+.pin a {
+  position: absolute;
+  right: 0.25px;
+  height: 40px;
+  width: 30px;
+} 
+
+/* --- CAJAS DE INFORMACION --- */
+[class^="cajafoto"] {
+  background: rgba(45, 0, 90, 0.8);
+  padding: 1.8rem;
+  width: 420px;
+  position: absolute;
+  border-radius: 15px;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 99999;
+  backdrop-filter: blur(8px);
+}
+
+
+
+.PinGuaridaDeWorlender:hover ~ .cajafotoGuaridaDeWorlender,
+.PinTierraPostApocaliptica:hover ~ .cajafotoTierraPostApocaliptica,
+.PinNuptia4:hover ~ .cajafotoNuptia4,
+.PinHospitalDeStGloppyNoops:hover ~ .cajafotoHospitalDeStGloppyNoops,
+.PinTierraDeRepuesto:hover ~ .cajafotoTierraDeRepuesto,
+.PinVueltaMenu:hover ~ .cajafotoVueltaMenu {
+  opacity: 0.95;
+  /* pointer-events: auto; */
+}
+
+/* --- IMAGENES DENTRO DE CAJAS --- */
+[class^="Foto"] img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* --- TEXTO DENTRO DE CAJAS --- */
+[class^="Texto"] {
+  font-size: 0.95rem;
+  color: #b7f0ad;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- POSICIONAMIENTO PINES --- */
+
+
+.PinGuaridaDeWorlender { height:70px; width:100px;right: 70vw; top: 60vh; }
+.PinTierraPostApocaliptica {height:100px; width:100px; right: 8vw; top: 62vh; }
+.PinNuptia4 { height:70px; width:100px;left: 38vw; bottom: 55vh; }
+.PinHospitalDeStGloppyNoops {height:70px; width:100px; right: 35vw; top: 15vh; }
+.PinTierraDeRepuesto { height:100px; width:100px; right: 10vw; top: 10vh; } 
+.PinVueltaMenu{ height:100px; width:100px; left: 3vw; top: 68vh; } 
+
+/* --- POSICIONAMIENTO CAJAS --- */
+.cajafotoGuaridaDeWorlender { right: 38vw; bottom: 12vh; }
+.cajafotoTierraPostApocaliptica { right:15vw; bottom: 10vh; }
+.cajafotoNuptia4{ right: 25vw; bottom: 30vh; }
+.cajafotoHospitalDeStGloppyNoops { right: 42vw; bottom: 25vh; }
+.cajafotoTierraDeRepuesto {  right: 20vw; bottom: 10vh; }
+.cajafotoVueltaMenu {  left: 20vw; bottom: 10vh; }
+
+
+.fa-beat-fade {
+    --fa-animation-duration: 1.5s;
+} 
+
+.fa-solid.fa-location-pin.fa-beat-fade{
+    animation-iteration-count: 0;
 }
